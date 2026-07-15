@@ -1,0 +1,3 @@
+tool,test_date,input_path,plan,settings,processing_seconds,exported_slides,factual_coverage_notes,unsupported_content_count,source_traceability,manual_cleanup_minutes,pptx_model,processing_boundary,result_status,blocker,evidence_path
+MagicSlides AI mode,,,,,,,,,,,,,not_tested,,
+SlideSpeak,,,,,,,,,,,,,not_tested,,

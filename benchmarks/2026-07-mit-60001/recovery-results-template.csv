@@ -1,0 +1,6 @@
+tool,test_date,input_path,plan,settings,processing_seconds,ground_truth_slides,exported_slides,true_positives,false_positives,false_negatives,precision,recall,f1,consecutive_duplicates,revisited_slide_behavior,transition_frames,cropped_or_obscured,manual_cleanup_minutes,pptx_model,processing_boundary,result_status,blocker,evidence_path
+Video2Any,,,,,,,,,,,,,,,,,,,,,not_tested,,
+Video2PPT,,,,,,,,,,,,,,,,,,,,,not_tested,,
+SyncSlide,,,,,,,,,,,,,,,,,,,,,not_tested,,
+Video to Slides,,,,,,,,,,,,,,,,,,,,,not_tested,,
+CopySlides,,,,,,,,,,,,,,,,,,,,,not_tested,,

@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "last_reviewed": "2026-07-15",
+  "field_notes": {
+    "processing": "Documented product behavior, not an independent privacy audit.",
+    "editability": "Evidence level; vendor claims are identified explicitly.",
+    "last_verified": "Date the first-party evidence page was checked."
+  },
+  "tools": [
+    {
+      "id": "copyslides",
+      "name": "CopySlides",
+      "category": "original-slide-recovery",
+      "url": "https://copyslides.com/video-to-slides",
+      "evidence": [
+        "https://copyslides.com/video-to-slides",
+        "https://copyslides.com/"
+      ],
+      "input": ["common local video formats"],
+      "output": ["PPTX", "Google Slides"],
+      "processing": "online workflow; paid desktop conversion is also advertised",
+      "editability": "vendor says editable text boxes and reconstructed layouts",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "magicslides-direct",
+      "name": "MagicSlides - Direct mode",
+      "category": "original-slide-recovery",
+      "url": "https://www.magicslides.app/tools/video-to-ppt",
+      "evidence": ["https://www.magicslides.app/tools/video-to-ppt"],
+      "input": ["local MP4", "local MOV", "local AVI", "local WebM"],
+      "output": ["PPTX"],
+      "processing": "browser for documented supported formats; server for others",
+      "editability": "vendor says editable; object structure not stated",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "slidestream-ai",
+      "name": "SlideStream AI",
+      "category": "original-slide-recovery",
+      "url": "https://slidestream.ai/",
+      "evidence": ["https://slidestream.ai/"],
+      "input": ["video upload"],
+      "output": ["downloadable deck", "Google Drive", "share link"],
+      "processing": "not stated",
+      "editability": "searchable OCR text documented; deck structure not stated",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "streamslide",
+      "name": "StreamSlide",
+      "category": "original-slide-recovery",
+      "url": "https://streamslide.io/video-to-slides",
+      "evidence": ["https://streamslide.io/video-to-slides"],
+      "input": ["local MP4", "local AVI", "local MOV", "local MKV", "local WebM"],
+      "output": ["PDF"],
+      "processing": "browser, according to product page",
+      "editability": "image slides",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "syncslide",
+      "name": "SyncSlide",
+      "category": "original-slide-recovery",
+      "url": "https://syncslide.com/",
+      "evidence": [
+        "https://syncslide.com/",
+        "https://syncslide.com/demo/",
+        "https://syncslide.com/privacy/"
+      ],
+      "input": ["local MP4", "local AVI", "local MOV", "local MKV", "local WebM", "local FLV", "screen recording"],
+      "output": ["PPTX", "PDF", "Google Slides", "narrated MP4"],
+      "processing": "server workflow is documented",
+      "editability": "image-faithful visuals with editable speaker notes; native-object reconstruction not stated",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "video-to-slides-extension",
+      "name": "Video to Slides - Chrome extension",
+      "category": "original-slide-recovery",
+      "url": "https://chromewebstore.google.com/detail/video-to-slides/nldgdhfmnpbmdpaobpgaplhdgojdgllh",
+      "evidence": ["https://chromewebstore.google.com/detail/video-to-slides/nldgdhfmnpbmdpaobpgaplhdgojdgllh"],
+      "input": ["video playing in browser tab"],
+      "output": ["PDF", "images", "HTML gallery"],
+      "processing": "browser extension; store listing says no data collection",
+      "editability": "image slides",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "videotoslides-org",
+      "name": "Video to Slides",
+      "category": "original-slide-recovery",
+      "url": "https://videotoslides.org/",
+      "evidence": ["https://videotoslides.org/"],
+      "input": ["local MP4", "local MOV", "local WebM", "local MKV"],
+      "output": ["PPTX", "PDF", "images"],
+      "processing": "server; product says uploads are removed after processing",
+      "editability": "vendor describes OCR-rebuilt editable layouts",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "video2any",
+      "name": "Video2Any",
+      "category": "original-slide-recovery",
+      "url": "https://video2any.com/",
+      "evidence": [
+        "https://video2any.com/",
+        "https://video2any.com/pricing-details"
+      ],
+      "input": ["local video", "supported video link", "screen recording"],
+      "output": ["PPTX", "PDF", "images", "subtitles"],
+      "processing": "browser for local video; link resolving may use server services",
+      "editability": "image-based PPTX; optional local-OCR text layer",
+      "affiliation": "maintainer project",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "video2ppt",
+      "name": "Video2PPT",
+      "category": "original-slide-recovery",
+      "url": "https://video2ppt.com/",
+      "evidence": [
+        "https://video2ppt.com/",
+        "https://video2ppt.com/privacy-policy"
+      ],
+      "input": ["local video", "online video link", "screen recording"],
+      "output": ["PPTX", "PDF", "HTML", "transcript"],
+      "processing": "product claims local/no-upload paths; privacy policy also covers server uploads retained up to 24 hours, so behavior is mode-dependent",
+      "editability": "vendor says text, shapes, and layouts are editable",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "magicslides-ai",
+      "name": "MagicSlides - AI mode",
+      "category": "ai-deck-generation",
+      "url": "https://www.magicslides.app/tools/video-to-ppt",
+      "evidence": ["https://www.magicslides.app/tools/video-to-ppt"],
+      "input": ["video upload", "online video via separate converter"],
+      "output": ["PPTX"],
+      "processing": "mixed; depends on input and mode",
+      "editability": "AI-generated deck; vendor says editable PPTX",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "presentations-ai",
+      "name": "Presentations.AI",
+      "category": "ai-deck-generation",
+      "url": "https://www.presentations.ai/url-to-ppt",
+      "evidence": ["https://www.presentations.ai/url-to-ppt"],
+      "input": ["public URL", "YouTube URL"],
+      "output": ["PPTX"],
+      "processing": "not stated",
+      "editability": "AI-generated deck; vendor says native editable PPTX",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "slidespeak",
+      "name": "SlideSpeak",
+      "category": "ai-deck-generation",
+      "url": "https://slidespeak.co/free-tools/convert-youtube-to-powerpoint",
+      "evidence": [
+        "https://slidespeak.co/free-tools/convert-youtube-to-powerpoint",
+        "https://slidespeak.co/privacy"
+      ],
+      "input": ["public YouTube URL"],
+      "output": ["PPTX", "PPT"],
+      "processing": "server; tool says immediate removal, while general privacy policy gives uploads a 180-day default",
+      "editability": "transcript-derived AI deck; vendor says editable",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    },
+    {
+      "id": "slidespilot",
+      "name": "SlidesPilot",
+      "category": "ai-deck-generation",
+      "url": "https://www.slidespilot.com/youtube-to-ppt",
+      "evidence": ["https://www.slidespilot.com/youtube-to-ppt"],
+      "input": ["public YouTube URL"],
+      "output": ["PPTX", "Google Slides", "PDF", "PNG"],
+      "processing": "server-side AI analysis; product says source video/audio is not stored",
+      "editability": "AI-generated deck with block editor; vendor says editable PPTX",
+      "affiliation": "none",
+      "last_verified": "2026-07-15"
+    }
+  ]
+}

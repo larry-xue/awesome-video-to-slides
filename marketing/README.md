@@ -1,14 +1,21 @@
 # Marketing Drafts
 
-This folder contains publish-ready promotion material for Awesome Video to Slides.
+This folder contains evidence-led distribution material for Awesome Video to
+Slides, Video2Any, and the open-source detector.
 
 Scope: international platforms only.
 
 ## Files
 
 - `best-video-to-slides-tools-devto-medium.md` - Main long-form article for Dev.to, Hashnode, Medium, or a personal blog.
-- `publishing-plan.md` - Suggested platform order, canonical strategy, titles, tags, and launch checklist.
-- `community-posts.md` - Ready-to-adapt copy for Hacker News, Reddit, X, and LinkedIn.
+- `publishing-plan.md` - Current owned-first publication and canonical strategy.
+- `community-posts.md` - Original launch-era community copy; retain for reference.
+- `seo-geo-content-plan-2026-07.md` - Research-backed content, GEO, and backlink plan.
+- `publish-ready/` - Current complete DEV, Medium/Hashnode, Reddit, and YouTube drafts.
+
+The broad comparison draft is no longer the primary next article. Publish a
+common-corpus benchmark with raw evidence first, then update or replace the
+comparison draft using measured results.
 
 ## Primary links
 

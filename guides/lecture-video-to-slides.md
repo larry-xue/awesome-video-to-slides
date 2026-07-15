@@ -1,86 +1,91 @@
 # How to Convert a Lecture Video to Slides
 
-Lecture videos are hard to review because the useful material is often trapped
-inside a long recording. A video-to-slides workflow turns that recording into a
-deck you can scan, annotate, print, or edit.
+Start by deciding whether you need the slides that appeared in the recording or
+a new summary deck. The pipelines solve different problems.
 
-This guide covers the practical pipeline for converting a lecture video into
-slides without treating the video as a black box.
+| Goal | Choose | Expected result |
+| --- | --- | --- |
+| Recover the lecturer's original visuals | Original-slide recovery | Captured frames, sometimes with OCR text |
+| Turn a talk into a concise presentation | AI deck generation | Newly written and designed slides |
+| Search or copy text from recovered slides | Recovery, then OCR | Images plus a searchable/editable text layer |
+| Add what the lecturer said to each slide | Recovery, then timestamped transcription | Slides paired with transcript excerpts or notes |
 
-## Best inputs
+See the [main comparison tables](../README.md#original-slide-recovery) before
+choosing a hosted tool.
 
-This workflow works best when the lecture includes visible slides, shared
-screens, whiteboards, or mostly static teaching material.
+## When recovery works well
 
-Good inputs:
+The input should contain visible slides, shared screens, whiteboards, or mostly
+static teaching material. Original recordings generally work better than
+compressed social-media reposts.
 
-- University lecture recordings.
-- Webinar replays.
-- Zoom, Google Meet, or Microsoft Teams class recordings.
-- Loom walkthroughs and product demos.
-- MP4 or WebM screen recordings.
+Recovery is harder when:
 
-Harder inputs:
+- The presenter or webcam covers a large part of the slide.
+- Slides are tiny, blurred, or filmed at an angle.
+- Builds and animations change only a small region.
+- Crossfades create several transitional frames.
+- The recording repeatedly switches between slides and camera footage.
 
-- Handheld camera footage of a room.
-- Highly animated videos.
-- Videos where the slides are tiny or blurred.
-- Lectures where the instructor constantly covers the slide content.
+## A reproducible recovery pipeline
 
-## Workflow
+1. Decode the video and sample a small comparison frame every 0.5–3 seconds.
+2. Mask unstable regions such as a webcam tile, cursor area, or player chrome.
+3. Compare the sample with the previous accepted slide.
+4. When the difference crosses the chosen threshold, wait for the transition to
+   settle and capture a high-resolution frame.
+5. Deduplicate against more than the immediately previous frame so revisited
+   slides are handled deliberately.
+6. Review captures for missed builds, duplicates, and transition frames.
+7. Export the accepted frames to images, PDF, or PPTX.
+8. Run OCR or transcription only if the use case needs searchable text or notes.
 
-1. Sample the video every 1-3 seconds.
-2. Downsample each sampled frame for fast comparison.
-3. Detect when the frame changes enough to represent a new slide.
-4. Capture a clean, higher-resolution frame at each detected timestamp.
-5. Review the extracted frames and remove duplicates or transition frames.
-6. Export the final set to PowerPoint, PDF, or image files.
+Useful components include [FFmpeg](https://ffmpeg.org/documentation.html) for
+decoding, [PySceneDetect](https://www.scenedetect.com/docs/) or a slide-specific
+detector for candidate changes, and
+[PptxGenJS](https://gitbrent.github.io/PptxGenJS/) or
+[python-pptx](https://python-pptx.readthedocs.io/) for export.
 
-## Browser-first option
+## What “editable PPTX” can mean
 
-[Video2Any](https://video2any.com) is the easiest browser-first route. Drop the
-lecture video into the app, review the detected slides, and export a PowerPoint,
-PDF, or image frames. The conversion runs in the browser, so the recording stays
-on your device.
+Before choosing a tool, inspect a sample export. The phrase is used for several
+different structures:
 
-## Developer option
+1. **Image-based PPTX:** each slide is one screenshot. You can reorder, crop, or
+   annotate it, but cannot directly edit the captured text or diagram.
+2. **Image plus OCR text layer:** the visual remains a screenshot while detected
+   text becomes selectable, searchable, or replaceable. OCR errors and font
+   mismatches remain possible.
+3. **Reconstructed native objects:** text boxes, shapes, tables, and images are
+   rebuilt as PowerPoint objects. This offers more control but may change the
+   original layout.
+4. **AI-regenerated deck:** a new presentation is written from the transcript or
+   video. It may be editable but is not a faithful recovery of the original.
 
-If you are building your own pipeline, use
-[video-slide-extractor](https://github.com/larry-xue/video-slide-extractor) for
-the slide-change detection step.
+The [verification notes](../docs/verification-notes.md) explain how this
+repository labels these cases without treating vendor copy as an independent
+test.
 
-```js
-import { createSlideDetector } from 'video-slide-extractor';
+## Adding speaker notes
 
-const detect = createSlideDetector(160, 90);
+For notes aligned to slides:
 
-for (const frame of sampledFrames) {
-  const result = detect(frame.rgba);
-  if (result.keep) {
-    console.log('new slide near', frame.time);
-  }
-}
-```
+1. Transcribe the audio with timestamps.
+2. Record the start and end timestamp for each accepted slide.
+3. Assign transcript segments to the overlapping slide interval.
+4. Keep low-confidence transcript text visibly marked for review.
+5. Write the paired text as speaker notes or export a sidecar document.
 
-Pair it with tools like FFmpeg, PySceneDetect, MoviePy, PptxGenJS, or
-python-pptx depending on whether your stack is JavaScript, Python, or command
-line based.
+Slide timing matters more than a polished transcript: a good sentence attached
+to the wrong slide is difficult to use.
 
-## Quality tips
+## Quality checklist
 
-- Prefer the original recording over a compressed social-media repost.
-- Sample more frequently if the lecturer advances slides quickly.
-- Capture export frames at higher resolution than the detection frames.
-- Review transition frames manually; fades can create halfway images.
-- Use OCR only after clean slide frames are extracted.
-
-## Output choices
-
-- PowerPoint `.pptx` if you want editable slide decks.
-- PDF if you want handouts or printable notes.
-- Image frames if you want to import the slides into another workflow.
-- Subtitles or transcripts if you also need speaker notes.
-
-For most lecture recordings, the simplest robust approach is local visual
-detection first, then optional OCR or transcription after the slide frames are
-clean.
+- Count expected slide changes in a short reference segment by hand.
+- Report missed slides, duplicates, and transition frames separately.
+- Test abrupt cuts, crossfades, animated builds, and revisited slides.
+- Inspect the actual PPTX object structure instead of relying on the word
+  “editable”.
+- Check whether video bytes leave the device if privacy matters; product copy
+  alone is not a network audit.
+- Respect the video's copyright, access terms, and the presenter's permission.

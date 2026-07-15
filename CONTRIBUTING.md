@@ -1,38 +1,101 @@
 # Contributing
 
-Thanks for helping improve Awesome Video to Slides.
+Thanks for helping keep Awesome Video to Slides useful and verifiable.
 
-## What belongs here
+## Curation standard
 
-Add resources that help people extract slides from videos, convert videos to PowerPoint, detect slide changes, process screen recordings, export slide decks, run OCR on slide images, or create transcripts and notes from recordings.
+This is a small, evidence-backed catalog, not a directory or backlink list. A
+resource belongs when it is directly useful for one of these jobs:
 
-Good examples:
+1. Recovering original slides or shared-screen frames from video.
+2. Generating a new presentation from a video's transcript or content.
+3. Implementing a slide-extraction pipeline: detection, OCR, transcription, or
+   PPTX/PDF export.
 
-- Video-to-PowerPoint or video-to-slides tools.
-- Open source libraries for scene detection, frame extraction, OCR, transcription, or document export.
-- Technical guides with reproducible workflows.
-- Tools that work with lecture recordings, webinars, meeting recordings, screen recordings, or presentation videos.
+For a hosted tool, the product must be accessible and have a first-party page
+that documents its video input and output. For open source, the repository must
+have a license and enough setup or API documentation to reproduce its role.
 
-## What does not belong here
+## What does not belong
 
-Please avoid:
+- Generic presentation makers with no documented video or video-URL input.
+- Generic screen recorders or editors with no extraction role.
+- Affiliate roundups, coupon pages, thin SEO pages, or copied documentation.
+- Abandoned demos with no usable code, license, or public product.
+- Near-duplicate tools that add no clear input, output, processing, platform, or
+  implementation difference.
+- Paid placements, backlink exchanges, undisclosed self-promotion, or ranking
+  claims such as “best”, “#1”, or “100% accurate”.
 
-- Generic presentation makers that do not work from video.
-- Thin affiliate pages or coupon pages.
-- Tools with no public documentation or product page.
-- Duplicate entries that do the same thing as an existing item without adding a clear difference.
-- Promotional copy like "best", "#1", or "ultimate" unless the linked source independently proves it.
+## Required evidence
 
-## Item format
+Use first-party product documentation, an official store listing, source code,
+or an official repository. Do not use a review or affiliate page to establish a
+feature claim.
 
-Use this format:
+For each core tool, provide:
+
+- Category: `original-slide-recovery` or `ai-deck-generation`.
+- Supported video input: local formats, URL source, recording, or extension.
+- Output: PPTX, PDF, images, transcript, or another documented format.
+- Processing location: browser/local, server, mixed, or `not stated`.
+- Editability evidence: image-based, OCR text layer, regenerated deck, native
+  objects demonstrated in source, vendor claim only, or `not stated`.
+- `last_verified` date in `YYYY-MM-DD` format.
+- One or more primary-source URLs supporting those fields.
+
+“Editable PPTX” alone is ambiguous. If the source does not explain whether the
+file contains a slide image, OCR overlay, or native objects, write `vendor says
+editable; structure not stated`.
+
+## Submission format
+
+Update both the README table and [`data/video-tools.json`](data/video-tools.json)
+for hosted tools. Keep the table cell short; put detailed source notes in
+[`docs/verification-notes.md`](docs/verification-notes.md).
+
+Suggested pull request body:
 
 ```md
-- [Name](https://example.com) - One neutral sentence explaining what it does and why it is relevant.
+## Resource
+
+- Name:
+- Category:
+- Why it adds a distinct capability:
+- Input:
+- Output:
+- Processing:
+- Editability evidence:
+- Last verified:
+- Primary sources:
+- Submitter affiliation: none / maintainer / employee / affiliate / other
+
+## Checks
+
+- [ ] I opened the product or repository page on the verification date.
+- [ ] Every feature claim is supported by a first-party source.
+- [ ] I updated README.md and data/video-tools.json consistently.
+- [ ] I disclosed any relationship with the submitted resource.
 ```
 
-Keep descriptions factual, short, and neutral.
+## Maintainer and submitter disclosures
 
-## Maintainer projects
+The list maintainer also maintains Video2Any and video-slide-extractor. Those
+entries are labeled **Maintainer project** in the README and `affiliation` in the
+data file. Maintainer projects receive no guaranteed position, recommendation,
+or softer evidence standard.
 
-Projects maintained by this list maintainer are allowed when clearly disclosed as "Maintainer project." They should not crowd out alternatives.
+Anyone submitting their own product is welcome to do so, but must disclose the
+relationship. Undisclosed promotional submissions may be removed.
+
+## Review policy
+
+- Categories are functional, not rankings.
+- Table rows are alphabetical except when two modes of one product need to stay
+  together for clarity.
+- Corrections with stronger first-party evidence take precedence over existing
+  wording.
+- Pricing, usage limits, and performance numbers are omitted unless they are
+  essential to the distinction and stable enough to maintain.
+- Stale rows may be marked unverified or removed if the product, documentation,
+  or repository is no longer accessible.

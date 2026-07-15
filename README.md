@@ -1,92 +1,138 @@
 # Awesome Video to Slides
 
-A curated list of tools, libraries, and workflows for extracting slides from videos, screen recordings, lectures, webinars, and meeting recordings.
+A curated, evidence-linked list of tools and libraries for recovering slides
+from recorded presentations or generating a new deck from video content.
 
-Use this list when you want to convert video to PowerPoint, extract slides from a lecture recording, detect slide changes in a screen recording, turn webinar videos into notes, or build your own video-to-slides pipeline.
+These are different jobs:
+
+- **Original-slide recovery** keeps frames or reconstructs content already
+  visible in a lecture, webinar, or screen recording.
+- **AI deck generation** summarizes a transcript or video into a newly designed
+  presentation. It does not recover the original deck.
+
+The distinction matters when comparing fidelity, editability, privacy, and
+output quality.
+
+> **Maintainer disclosure:** the list maintainer also maintains
+> [Video2Any](https://video2any.com/) and
+> [video-slide-extractor](https://github.com/larry-xue/video-slide-extractor).
+> Both are marked **Maintainer project** and follow the same inclusion rules as
+> other entries. There are no paid placements or affiliate links.
 
 ## Contents
 
-- [Video to PowerPoint Tools](#video-to-powerpoint-tools)
-- [Open Source Slide and Scene Detection](#open-source-slide-and-scene-detection)
-- [Screen Recording and Video Capture](#screen-recording-and-video-capture)
-- [Browser Export and Document Generation](#browser-export-and-document-generation)
-- [Presentation and Slide Workflows](#presentation-and-slide-workflows)
-- [OCR, Transcription, and Notes](#ocr-transcription-and-notes)
-- [Technical Guides](#technical-guides)
-- [Related Searches](#related-searches)
+- [Original-slide recovery](#original-slide-recovery)
+- [AI deck generation](#ai-deck-generation)
+- [Open-source slide extraction](#open-source-slide-extraction)
+- [Pipeline building blocks](#pipeline-building-blocks)
+- [Guides and evidence](#guides-and-evidence)
 - [Contributing](#contributing)
 
-## Video to PowerPoint Tools
+## How to read the tables
 
-- [Video2Any](https://video2any.com) - Convert videos, screen recordings, and meeting recordings into editable PowerPoint decks, PDFs, image frames, and subtitles in the browser. Files stay on your device. Maintainer project.
-- [MagicSlides Video to PPT Converter](https://www.magicslides.app/tools/video-to-ppt) - Online video-to-PowerPoint tool for turning uploaded or linked videos into slides.
-- [SlideSpeak YouTube to PowerPoint](https://slidespeak.co/free-tools/convert-youtube-to-powerpoint) - Tool for converting YouTube videos into presentation slides.
-- [Video2PPT](https://video2ppt.com/) - Video-to-PowerPoint converter for MP4, YouTube, and screen recordings.
+- **Processing** reports the product's documented behavior, not an independent
+  privacy audit. `Not stated` is used when the official source is unclear.
+- **Editability** describes the evidence available: an image-based slide, an
+  OCR text layer over an image, or a newly generated deck. A vendor saying
+  “editable PPTX” is not treated as proof of native PowerPoint objects.
+- **Verified** means the linked first-party page was reachable and supported the
+  row on that date. It is not a product endorsement or benchmark result.
 
-## Open Source Slide and Scene Detection
+The machine-readable subset is available in
+[`data/video-tools.json`](data/video-tools.json). Verification method and source
+notes are in [`docs/verification-notes.md`](docs/verification-notes.md).
 
-- [video-slide-extractor](https://github.com/larry-xue/video-slide-extractor) - Zero-dependency JavaScript library for detecting slide and scene changes from video frames in the browser or Node. Maintainer project.
-- [PySceneDetect](https://www.scenedetect.com/) - Python tool and library for detecting shot changes and splitting videos into scenes.
-- [FFmpeg](https://ffmpeg.org/) - Command-line toolkit for decoding, sampling, trimming, and exporting video frames.
-- [OpenCV](https://opencv.org/) - Computer vision library often used for frame differencing, template matching, OCR preprocessing, and video analysis.
-- [MoviePy](https://zulko.github.io/moviepy/) - Python video editing automation library for cutting, sampling, compositing, and processing video files.
+## Original-slide recovery
 
-## Screen Recording and Video Capture
+Use these when the video already contains slides or mostly static shared-screen
+content and you want to recover those visuals.
 
-- [OBS Studio](https://obsproject.com/) - Free and open source software for video recording and live streaming, useful for creating screen recordings that can later be converted into slides.
-- [Loom](https://www.loom.com/) - Screen and camera recording tool often used for product walkthroughs, async demos, and training videos.
-- [Remotion](https://www.remotion.dev/) - React framework for creating programmatic videos and automations, useful when generated video content later needs frame or slide extraction.
+| Tool | Input | Output | Processing | Editability evidence | Verified |
+| --- | --- | --- | --- | --- | --- |
+| [CopySlides](https://copyslides.com/video-to-slides) | Common local video formats | PPTX or Google Slides | Online workflow; paid desktop conversion is also advertised | Vendor says text boxes and layouts are reconstructed as editable objects | 2026-07-15 |
+| [MagicSlides — Direct mode](https://www.magicslides.app/tools/video-to-ppt) | Local MP4, MOV, AVI, or WebM | PPTX | Browser for documented supported formats; server for others | Vendor says editable; object structure not stated | 2026-07-15 |
+| [SlideStream AI](https://slidestream.ai/) | Video upload | Downloadable deck; Google Drive/share link | Not stated | Searchable OCR text is documented; deck structure not stated | 2026-07-15 |
+| [StreamSlide](https://streamslide.io/video-to-slides) | Local MP4, AVI, MOV, MKV, or WebM | PDF | Browser, according to product page | Image slides | 2026-07-15 |
+| [SyncSlide](https://syncslide.com/) | Local MP4, AVI, MOV, MKV, WebM, or FLV; screen recording | PPTX, PDF, Google Slides, or narrated MP4 | Server workflow is documented | Image-faithful visuals with editable speaker notes; native-object reconstruction is not stated | 2026-07-15 |
+| [Video to Slides — Chrome extension](https://chromewebstore.google.com/detail/video-to-slides/nldgdhfmnpbmdpaobpgaplhdgojdgllh) | Video playing in a browser tab | PDF, images, or HTML gallery | Browser extension; store listing says no data collection | Image slides | 2026-07-15 |
+| [Video to Slides](https://videotoslides.org/) | Local MP4, MOV, WebM, or MKV | PPTX, PDF, or images | Server; product says uploads are removed after processing | Vendor describes OCR-rebuilt editable layouts | 2026-07-15 |
+| [Video2Any](https://video2any.com/) **Maintainer project** | Local video, supported video link, or screen recording | PPTX, PDF, images, subtitles | Browser for local video processing; link resolving may use server services | Image-based PPTX; optional local-OCR text layer | 2026-07-15 |
+| [Video2PPT](https://video2ppt.com/) | Local video, online video link, or screen recording | PPTX, PDF, HTML, transcript | Product claims local/no-upload paths; privacy policy also covers server uploads retained up to 24 hours, so behavior is mode-dependent | Vendor says text, shapes, and layouts are editable | 2026-07-15 |
 
-## Browser Export and Document Generation
+## AI deck generation
 
-- [PptxGenJS](https://gitbrent.github.io/PptxGenJS/) - JavaScript library for creating PowerPoint `.pptx` files in the browser or Node.
-- [python-pptx](https://python-pptx.readthedocs.io/) - Python library for creating, reading, and updating PowerPoint `.pptx` files.
-- [jsPDF](https://github.com/parallax/jsPDF) - JavaScript PDF generation library for browser and Node workflows.
-- [JSZip](https://stuk.github.io/jszip/) - JavaScript library for creating ZIP archives, useful for exporting extracted slide images.
+Use these when you want a summary or redesigned presentation derived from a
+video. Output may omit, rewrite, or reorganize the original visual content.
 
-## Presentation and Slide Workflows
+| Tool | Input | Output | Processing | Editability evidence | Verified |
+| --- | --- | --- | --- | --- | --- |
+| [MagicSlides — AI mode](https://www.magicslides.app/tools/video-to-ppt) | Video upload; separate converter for online video | PPTX | Mixed; depends on input and mode | AI-generated deck; vendor says editable PPTX | 2026-07-15 |
+| [Presentations.AI](https://www.presentations.ai/url-to-ppt) | Public URL, including YouTube | PPTX | Not stated on the converter page | AI-generated deck; vendor says native editable PPTX | 2026-07-15 |
+| [SlideSpeak](https://slidespeak.co/free-tools/convert-youtube-to-powerpoint) | Public YouTube URL | PPTX or PPT | Server; tool page says immediate removal, while general privacy policy gives uploads a 180-day default | Transcript-derived AI deck; vendor says editable | 2026-07-15 |
+| [SlidesPilot](https://www.slidespilot.com/youtube-to-ppt) | Public YouTube URL | PPTX, Google Slides, PDF, or PNG | Server-side AI analysis; product says it does not store source video/audio | AI-generated deck with block editor; vendor says editable PPTX | 2026-07-15 |
 
-- [Google Slides](https://www.google.com/slides/about/) - Browser-based presentation editor that can open `.pptx` exports from video-to-slides tools.
-- [LibreOffice Impress](https://www.libreoffice.org/discover/impress/) - Open source presentation editor for creating and editing slide decks, including PowerPoint-compatible workflows.
-- [Marp](https://marp.app/) - Markdown presentation ecosystem for creating slide decks from Markdown.
-- [reveal.js](https://revealjs.com/) - Open source HTML presentation framework for building web-based slide decks.
+## Open-source slide extraction
 
-## OCR, Transcription, and Notes
+Projects whose documented purpose directly includes extracting presentation
+slides from video:
 
-- [Tesseract.js](https://tesseract.projectnaptha.com/) - JavaScript OCR library that runs in the browser or Node and recognizes text from images.
-- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) - Open source OCR engine for extracting text from slide images and screenshots.
-- [whisper.cpp](https://github.com/ggml-org/whisper.cpp) - C/C++ port of Whisper for local speech-to-text transcription.
+- [slideextract](https://github.com/szanni/slideextract) - C/C++ command-line
+  program that compares frames in a selected region and writes one image per
+  detected slide. BSD-2-Clause; last repository push 2023-05-06. Verified
+  2026-07-15.
+- [video-slide-extractor](https://github.com/larry-xue/video-slide-extractor)
+  **Maintainer project** - Zero-dependency JavaScript detector for browser or
+  Node pipelines; returns detected changes rather than complete PPTX/PDF files.
+  MIT; last repository push 2026-07-04. Verified 2026-07-15.
 
-## Technical Guides
+## Pipeline building blocks
 
-- [How to extract slides from a video in JavaScript](https://github.com/larry-xue/video-slide-extractor/blob/master/docs/extract-slides-from-video.md) - Browser workflow for sampling frames and detecting slide changes.
-- [How video to PowerPoint conversion works](https://github.com/larry-xue/video-slide-extractor/blob/master/docs/video-to-powerpoint.md) - Overview of the detect, capture, and export pipeline.
-- [Detect slide changes in screen recordings](https://github.com/larry-xue/video-slide-extractor/blob/master/docs/screen-recording-to-slides.md) - Notes for Zoom, Teams, Meet, Loom, and browser recording workflows.
-- [Frame differencing vs AI for slide extraction](https://github.com/larry-xue/video-slide-extractor/blob/master/docs/frame-differencing-vs-ai.md) - When simple local visual detection is enough, and when OCR or AI helps.
-- [How to convert a lecture video to slides](guides/lecture-video-to-slides.md) - Practical workflow for turning recorded classes, talks, and training videos into slide decks.
-- [PySceneDetect documentation](https://www.scenedetect.com/docs/) - Documentation for command-line and Python scene detection workflows.
-- [FFmpeg documentation](https://ffmpeg.org/documentation.html) - Reference for decoding video, extracting frames, and converting formats.
+These are established components for building a converter, not turnkey
+video-to-slides products.
 
-## Related Searches
+### Decode, sample, and detect
 
-People looking for this topic often search for:
+- [FFmpeg](https://ffmpeg.org/documentation.html) - Decode videos, sample or
+  filter frames, and export images.
+- [OpenCV](https://docs.opencv.org/) - Frame differencing, masking, feature
+  matching, perspective correction, and image preprocessing.
+- [MoviePy](https://zulko.github.io/moviepy/) - Python video reading, cutting,
+  sampling, and automation.
+- [PySceneDetect](https://www.scenedetect.com/docs/) - Python/CLI shot and
+  transition detection; useful as a baseline, though presentation builds often
+  need slide-specific deduplication.
 
-- video to slides
-- video to PowerPoint
-- video to PPT
-- extract slides from video
-- lecture video to slides
-- webinar to slides
-- screen recording to PowerPoint
-- Zoom recording to slides
-- YouTube video to PowerPoint
-- scene detection for slide extraction
+### OCR, transcription, and export
+
+- [PptxGenJS](https://gitbrent.github.io/PptxGenJS/) - Generate PPTX files from
+  JavaScript in Node or a browser.
+- [python-pptx](https://python-pptx.readthedocs.io/) - Create and update PPTX
+  files from Python.
+- [Tesseract](https://github.com/tesseract-ocr/tesseract) and
+  [Tesseract.js](https://github.com/naptha/tesseract.js) - OCR engines for
+  extracting text from captured slide images.
+- [whisper.cpp](https://github.com/ggml-org/whisper.cpp) - Local speech-to-text
+  component for transcripts or timestamped speaker notes.
+
+Pipeline links above were checked against official documentation or source
+repositories on 2026-07-15.
+
+## Guides and evidence
+
+- [How to convert a lecture video to slides](guides/lecture-video-to-slides.md)
+  - A decision-oriented workflow for recovery, OCR, notes, and export.
+- [Verification notes](docs/verification-notes.md) - Definitions, source log,
+  and known evidence limits for the comparison tables.
+- [How to extract slides from a video in JavaScript](https://github.com/larry-xue/video-slide-extractor/blob/master/docs/extract-slides-from-video.md)
+- [Frame differencing vs AI for slide extraction](https://github.com/larry-xue/video-slide-extractor/blob/master/docs/frame-differencing-vs-ai.md)
+- [PySceneDetect documentation](https://www.scenedetect.com/docs/)
+- [FFmpeg documentation](https://ffmpeg.org/documentation.html)
 
 ## Contributing
 
-Pull requests are welcome. Please add tools, libraries, or guides that are directly useful for video-to-slides, slide extraction, scene detection, OCR, transcription, or presentation export workflows.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the curation rules.
+Corrections and additions are welcome. Every core tool submission must include
+first-party evidence for its input, output, processing, and editability fields,
+plus a verification date. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 

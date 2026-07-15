@@ -1,178 +1,104 @@
 # Publishing Plan
 
-Audience: international developers, creators, educators, and technical users who search for video-to-slides, lecture-to-slides, video-to-PowerPoint, screen-recording-to-PPT, slide extraction, and browser video processing workflows.
+Updated: 2026-07-15
 
-## Platform order
+Audience: international developers, educators, students, creators, and
+technical users evaluating video-to-slides, lecture-to-slides,
+video-to-PowerPoint, screen-recording-to-PPT, and slide-change detection.
 
-1. Dev.to
-2. Hashnode
-3. Medium
-4. Hacker News
-5. Reddit
-6. X
-7. LinkedIn
+## Current state
 
-## Why this order
+- The DEV article "How I Built a Browser-Based Video to PowerPoint Converter"
+  was published on 2026-07-04 and is indexed.
+- Video2Any already has owned blog coverage for MP4, WebM, YouTube-to-PPT,
+  privacy/local processing, the product workflow, best-video-to-PPT, and GIF.
+- The next asset is a reproducible common-corpus benchmark, not another generic
+  listicle.
+- `best-video-to-slides-tools-devto-medium.md` is now a source draft. Do not
+  publish it unchanged or canonicalize new articles to a GitHub blob page.
 
-Dev.to and Hashnode are the best first surfaces for developer-oriented content. Medium is useful as a republishing surface and backlink, but should not be the only source of record. Hacker News and Reddit should be posted only when the angle is genuinely useful, technical, and discussion-worthy. X and LinkedIn are distribution, not the main SEO asset.
+## Publication order
+
+1. Video2Any owned blog: full benchmark or cornerstone article.
+2. GitHub: test protocol, labels, CSV/JSON results, screenshots, and samples.
+3. DEV Community: a distinct technical derivative.
+4. Reddit: one complete community-native data or discussion post.
+5. YouTube long-form: visual proof and exported-file inspection.
+6. Medium **or** Hashnode: one audience-specific article or canonical repost.
+7. Hacker News: only for a genuinely new benchmark dataset or open-source
+   release.
 
 ## Canonical strategy
 
-Use the GitHub article file as the canonical source if cross-posting the same article:
+Owned articles should be published on `video2any.com` first and use a
+self-referential canonical URL.
 
-```text
-https://github.com/larry-xue/awesome-video-to-slides/blob/master/marketing/best-video-to-slides-tools-devto-medium.md
-```
+When substantially the same article is imported to DEV, Medium, or Hashnode,
+set its canonical/original URL to the owned article. Do not point canonical URLs
+at Markdown blob pages in GitHub.
 
-For Dev.to, keep the `canonical_url` field in the front matter.
+A genuinely distinct technical article can keep its platform URL as canonical
+while linking naturally to the owned evidence and repository.
 
-For Hashnode and Medium, set the canonical URL in the publishing settings if available.
+Reddit and YouTube do not provide a cross-domain article canonical workflow.
+Treat them as complete native content and referral/discussion surfaces, not
+guaranteed link-equity sources.
 
-If the Dev.to post becomes the strongest public version and gets engagement, future reposts can canonicalize to the Dev.to URL instead.
+## Content rules
 
-## Primary article
+- Disclose: "I maintain Video2Any and video-slide-extractor."
+- Distinguish product claims from hands-on measurements.
+- Record test date, source, plan, device, defaults, and blockers.
+- Separate original-slide recovery from transcript-to-new-deck generation.
+- Name the PPTX model: image-backed, OCR text layer, or native objects.
+- Include failures, limitations, and who should use another workflow.
+- Keep every platform post useful without requiring a click.
+- Use one or two contextual links instead of repeated optimized anchors.
 
-File:
+## Current publish-ready files
 
-```text
-marketing/best-video-to-slides-tools-devto-medium.md
-```
+- `publish-ready/devto-evaluating-slide-change-detectors.md`
+- `publish-ready/medium-video-to-powerpoint-three-workflows.md`
+- `publish-ready/reddit-native-posts.md`
+- `publish-ready/youtube-editable-pptx-script.md`
+- Owned article draft:
+  `../../video2any/marketing/blog/editable-pptx-is-overloaded.md`
 
-Suggested title:
+## Benchmark gate
 
-```text
-Best ways to turn video into slides: tools, open-source libraries, and browser workflows
-```
+Do not publish a ranked comparison until all of the following exist:
 
-Alternative titles:
+- ground-truth slide labels;
+- a frozen common input and test environment;
+- raw detected timestamps or exports;
+- missed-slide, duplicate, and transition-frame counts;
+- a processing/privacy classification backed by current sources;
+- blockers marked as blockers rather than inferred results;
+- a disclosure that Video2Any is maintained by the author.
 
-- Best video-to-slides tools for lectures, webinars, and screen recordings
-- How to turn video into slides: tools, libraries, and workflows
-- Video to PowerPoint vs slide extraction: which workflow should you use?
-- Extract slides from videos: browser tools, JavaScript libraries, and FFmpeg workflows
+If an account, card, or unsupported input prevents a test, report `not tested`
+and the exact blocker. Do not convert a landing-page claim into a measured score.
 
-Suggested tags:
+## Launch checklist
 
-- Dev.to: `video`, `javascript`, `opensource`, `productivity`
-- Hashnode: `JavaScript`, `Open Source`, `Video Processing`, `Developer Tools`
-- Medium: `Video Processing`, `Open Source`, `Developer Tools`, `Productivity`, `Presentation`
+- [ ] Complete the benchmark protocol and candidate matrix.
+- [ ] Run the no-account baselines and save raw evidence.
+- [ ] Record account/payment blockers for the remaining tools.
+- [ ] Publish the full owned article and confirm its rendered HTML, canonical,
+      sitemap entry, and internal links.
+- [ ] Publish the GitHub evidence package.
+- [ ] Publish the DEV technical derivative.
+- [ ] Post one subreddit-specific discussion after checking current rules.
+- [ ] Record and publish the long-form YouTube proof video.
+- [ ] Ask included maintainers for factual corrections, not reciprocal links.
+- [ ] Measure referring domains, branded queries, engaged sessions, GitHub
+      activity, and conversions.
 
-## Link targets
-
-Use these public links only:
+## Public links
 
 - Awesome list: https://github.com/larry-xue/awesome-video-to-slides
 - Video2Any: https://video2any.com
 - Open-source core: https://github.com/larry-xue/video-slide-extractor
 - npm package: https://www.npmjs.com/package/video-slide-extractor
 
-Do not include the private Video2Any source repository.
-
-## Posting notes by platform
-
-### Dev.to
-
-Use the article as-is. Keep the front matter. After publishing, add one comment asking for recommendations:
-
-```text
-If you know a good open-source tool or workflow for extracting slides from lecture videos, webinars, or screen recordings, send it here or open a PR on the awesome list.
-```
-
-Goal: developer discovery, GitHub stars, package visibility, backlinks.
-
-### Hashnode
-
-Republish the same article with the canonical URL set. Keep the tone practical. Do not turn it into a product announcement.
-
-Goal: extra search surface and developer audience.
-
-### Medium
-
-Republish with canonical. Keep the post outside the paywall so it can be indexed and shared.
-
-Goal: authority surface and long-tail search visibility.
-
-### Hacker News
-
-Do not post the comparison article as the main link. Post the GitHub repo or Video2Any only when the angle is Show HN-worthy.
-
-Best title options:
-
-```text
-Show HN: Awesome Video to Slides - tools for extracting slides from videos
-```
-
-```text
-Show HN: I made a curated list of video-to-slides tools and libraries
-```
-
-First comment angle:
-
-- Explain why the list exists.
-- Mention the ambiguity between slide extraction, scene detection, and AI deck generation.
-- Ask for missing open-source tools.
-- Do not ask for upvotes.
-
-### Reddit
-
-Prefer comments on relevant existing threads over a cold promotional post.
-
-Potential subreddits to evaluate manually before posting:
-
-- `r/opensource`
-- `r/javascript`
-- `r/webdev`
-- `r/edtech`
-- `r/productivity`
-- `r/DataHoarder` if the angle is archiving lectures or preserving recordings
-
-Before posting:
-
-- Check subreddit self-promotion rules.
-- Use a discussion title, not a sales title.
-- Mention affiliation transparently.
-- Ask for missing tools or workflows.
-
-### X
-
-Use X for quick distribution and to ask for additions. Put the link in the first reply if the account has weak reach; use the main post for the hook.
-
-### LinkedIn
-
-Use LinkedIn for the practical productivity angle:
-
-- course creators
-- educators
-- webinar operators
-- product teams with demo recordings
-- developers building browser video tools
-
-## Launch checklist
-
-- [ ] Confirm repo description and topics are set on GitHub.
-- [ ] Publish Dev.to article.
-- [ ] Repost to Hashnode with canonical.
-- [ ] Repost to Medium with canonical and no paywall.
-- [ ] Share X thread.
-- [ ] Share LinkedIn post.
-- [ ] Wait for organic comments before posting to Reddit.
-- [ ] If posting to HN, use Show HN format and add a technical first comment.
-- [ ] Reply to comments and collect suggested tools as issues or PRs.
-- [ ] Add new credible tools to the awesome list within 48 hours.
-
-## What not to say
-
-Avoid:
-
-- "The best tool ever"
-- "AI-powered magic"
-- "Please star this repo"
-- "Upvote this"
-- "This replaces every other tool"
-
-Use:
-
-- "I made a curated list"
-- "I am comparing workflows"
-- "What am I missing?"
-- "The distinction is original slide extraction vs summarized deck generation"
+Do not include the private Video2Any source repository in public material.

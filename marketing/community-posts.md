@@ -1,5 +1,9 @@
 # Community Posts
 
+> Historical launch copy. For current evidence-led Reddit and platform drafts,
+> use [`publish-ready/`](publish-ready/README.md). Do not repost these generic
+> launch bodies across multiple communities.
+
 Use these as starting points. Keep the tone transparent and useful. For Reddit and Hacker News, read the community rules before posting.
 
 ## Hacker News
