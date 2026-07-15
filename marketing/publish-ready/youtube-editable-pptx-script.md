@@ -2,6 +2,12 @@
 
 ## Metadata
 
+Thumbnail file:
+
+```text
+images/youtube-editable-pptx-thumbnail.png
+```
+
 Title:
 
 ```text

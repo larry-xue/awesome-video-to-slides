@@ -5,6 +5,19 @@ Prepared: 2026-07-15
 These files are complete platform-native drafts. Replace only the publication
 date or final benchmark URL where explicitly marked.
 
+## Image map
+
+| Draft | Image to upload | Recommended use |
+| --- | --- | --- |
+| Video2Any owned article | `video2any/public/art/blog-editable-pptx.png` | Already wired into the site route; also suitable for Open Graph sharing |
+| `devto-evaluating-slide-change-detectors.md` | `images/devto-evaluating-slide-change-detectors.png` | DEV cover image |
+| `medium-video-to-powerpoint-three-workflows.md` | `images/medium-three-video-to-ppt-workflows.png` | Medium or Hashnode cover image |
+| `youtube-editable-pptx-script.md` | `images/youtube-editable-pptx-thumbnail.png` | YouTube thumbnail |
+| `reddit-native-posts.md` | Use the DEV evaluation image for Draft A or the owned-article image for Draft B | Only attach when the subreddit allows image-supported discussion posts |
+
+All generated images are 1672×941 PNG files. Keep the originals for platform
+upload; create smaller derivatives only if a platform rejects the source size.
+
 ## Recommended order
 
 1. Publish the owned-site article from
