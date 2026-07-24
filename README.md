@@ -25,6 +25,7 @@ output quality.
 - [AI deck generation](#ai-deck-generation)
 - [Open-source slide extraction](#open-source-slide-extraction)
 - [Pipeline building blocks](#pipeline-building-blocks)
+- [Research and datasets](#research-and-datasets)
 - [Guides and evidence](#guides-and-evidence)
 - [Contributing](#contributing)
 
@@ -76,14 +77,26 @@ video. Output may omit, rewrite, or reorganize the original visual content.
 Projects whose documented purpose directly includes extracting presentation
 slides from video:
 
+- [lectures-2-slides](https://github.com/sidharth-anand/lectures-2-slides) -
+  Python CLI that batch-converts a directory of lecture videos into per-lecture
+  PDF slide decks. MIT; last repository push 2021-10-17. Verified 2026-07-24.
 - [slideextract](https://github.com/szanni/slideextract) - C/C++ command-line
   program that compares frames in a selected region and writes one image per
   detected slide. BSD-2-Clause; last repository push 2023-05-06. Verified
   2026-07-15.
+- [vid2slides](https://github.com/patrickmineault/vid2slides) - Python tool that
+  extracts slides from a talk video. No license declared, so reuse terms are
+  unclear; last repository push 2020-11-23. Verified 2026-07-24.
 - [video-slide-extractor](https://github.com/larry-xue/video-slide-extractor)
   **Maintainer project** - Zero-dependency JavaScript detector for browser or
   Node pipelines; returns detected changes rather than complete PPTX/PDF files.
   MIT; last repository push 2026-07-04. Verified 2026-07-15.
+- [video2ppt](https://github.com/Wangxs404/video2ppt) - Python tool that turns
+  local videos, online videos, and screen recordings into slides. MIT; last
+  repository push 2025-11-03. Verified 2026-07-24.
+- [video2slides](https://github.com/binh234/video2slides) - Python tool that
+  detects slide frames in a video and exports them as a slide deck. MIT; last
+  repository push 2024-03-14. Verified 2026-07-24.
 
 ## Pipeline building blocks
 
@@ -116,6 +129,13 @@ video-to-slides products.
 
 Pipeline links above were checked against official documentation or source
 repositories on 2026-07-15.
+
+## Research and datasets
+
+- [MaViLS](https://github.com/andererka/MaViLS) - Benchmark dataset and a
+  multimodal (speech, OCR, and visual features) baseline algorithm for aligning
+  video frames to their slides, released with an accompanying paper. Apache-2.0;
+  last repository push 2024-09-25. Verified 2026-07-24.
 
 ## Guides and evidence
 
