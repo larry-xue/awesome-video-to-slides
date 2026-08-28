@@ -91,8 +91,14 @@ relationship. Undisclosed promotional submissions may be removed.
 ## Review policy
 
 - Categories are functional, not rankings.
-- Table rows are alphabetical except when two modes of one product need to stay
-  together for clarity.
+- In the original-slide recovery table, rows are grouped by where processing
+  happens: tools that can convert a local video inside the browser come before
+  those that upload it or do not say. Within a group, rows are alphabetical.
+  The grouping is a fact about each tool, applied to every entry including the
+  maintainer's own, and it is not a ranking — a server workflow is the right
+  answer for anyone converting from a phone or a Chromebook.
+- Elsewhere, table rows are alphabetical except when two modes of one product
+  need to stay together for clarity.
 - Corrections with stronger first-party evidence take precedence over existing
   wording.
 - Pricing, usage limits, and performance numbers are omitted unless they are

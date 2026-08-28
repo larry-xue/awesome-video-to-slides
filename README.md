@@ -48,16 +48,22 @@ notes are in [`docs/verification-notes.md`](docs/verification-notes.md).
 Use these when the video already contains slides or mostly static shared-screen
 content and you want to recover those visuals.
 
+Rows are grouped by where the work happens — tools that can process a local
+video inside the browser first, then those that upload it or do not say —
+because that is the difference a reader cannot undo later. Within each group
+rows are alphabetical. Grouping is not a ranking: a server workflow is the
+right answer for anyone converting from a phone or a Chromebook.
+
 | Tool | Input | Output | Processing | Editability evidence | Verified |
 | --- | --- | --- | --- | --- | --- |
-| [CopySlides](https://copyslides.com/video-to-slides) | Local MP4, MOV, AVI, MKV, or WebM | PPTX or Google Slides | Online workflow; paid desktop conversion is also advertised | Vendor says text boxes and layouts are reconstructed as editable objects | 2026-08-28 |
 | [MagicSlides — Direct mode](https://www.magicslides.app/tools/video-to-ppt) | Local MP4, MOV, AVI, or WebM | PPTX | Browser for MP4, MOV, and WebM; other formats, including AVI, are processed on the vendor's server and deleted after conversion | Vendor says editable; object structure not stated | 2026-08-28 |
-| [SlideStream AI](https://slidestream.ai/) | Not stated | Downloadable deck; Google Drive/share link | Not stated | Searchable OCR text is documented; deck structure not stated | 2026-08-28 |
-| [SyncSlide](https://syncslide.com/) | Local MP4, AVI, MOV, MKV, WebM, or FLV; screen recording | PPTX, PDF, Google Slides, or narrated MP4 | Server workflow is documented | Image-faithful visuals with editable speaker notes; native-object reconstruction is not stated | 2026-08-28 |
 | [Video to Slides — Chrome extension](https://chromewebstore.google.com/detail/video-to-slides/nldgdhfmnpbmdpaobpgaplhdgojdgllh) | Video playing in a browser tab | PDF, images, or HTML gallery | Browser extension; store listing says no data collection | Image slides | 2026-08-28 |
-| [Video to Slides](https://videotoslides.org/) | Local MP4, MOV, WebM, or MKV; YouTube URL | PPTX, PDF, or images | Server; product says uploads are removed after processing | Vendor describes OCR-rebuilt editable layouts | 2026-08-28 |
 | [Video2Any](https://video2any.com/) **Maintainer project** | Local video, supported video link, or screen recording | PPTX, PDF, Word, Markdown, images, subtitles, or audio | Browser for local video processing; link resolving may use server services | Image-based PPTX; optional local-OCR text layer | 2026-08-28 |
 | [Video2PPT](https://video2ppt.com/) | Local video, online video link, or screen recording | PPTX, Google Slides, PDF, HTML, transcript | Product claims local/no-upload paths; privacy policy carves out optional online features whose content leaves the device, retained only as long as needed, so behavior is mode-dependent | Vendor says text, shapes, and layouts are editable | 2026-08-28 |
+| [CopySlides](https://copyslides.com/video-to-slides) | Local MP4, MOV, AVI, MKV, or WebM | PPTX or Google Slides | Online workflow; paid desktop conversion is also advertised | Vendor says text boxes and layouts are reconstructed as editable objects | 2026-08-28 |
+| [SlideStream AI](https://slidestream.ai/) | Not stated | Downloadable deck; Google Drive/share link | Not stated | Searchable OCR text is documented; deck structure not stated | 2026-08-28 |
+| [SyncSlide](https://syncslide.com/) | Local MP4, AVI, MOV, MKV, WebM, or FLV; screen recording | PPTX, PDF, Google Slides, or narrated MP4 | Server workflow is documented | Image-faithful visuals with editable speaker notes; native-object reconstruction is not stated | 2026-08-28 |
+| [Video to Slides](https://videotoslides.org/) | Local MP4, MOV, WebM, or MKV; YouTube URL | PPTX, PDF, or images | Server; product says uploads are removed after processing | Vendor describes OCR-rebuilt editable layouts | 2026-08-28 |
 
 ## AI deck generation
 
