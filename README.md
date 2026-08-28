@@ -88,9 +88,11 @@ slides from video:
   extracts slides from a talk video. No license declared, so reuse terms are
   unclear; last repository push 2020-11-23. Verified 2026-07-24.
 - [video-slide-extractor](https://github.com/larry-xue/video-slide-extractor)
-  **Maintainer project** - Zero-dependency JavaScript detector for browser or
-  Node pipelines; returns detected changes rather than complete PPTX/PDF files.
-  MIT; last repository push 2026-07-04. Verified 2026-07-15.
+  **Maintainer project** - Dependency-free JavaScript detector for browser or
+  Node pipelines, and a CLI (`npx video-slide-extractor talk.mp4`) that writes
+  one image per detected slide, shelling out to ffmpeg to decode and to
+  recapture at source resolution. Images, not PPTX/PDF. MIT; last repository
+  push 2026-08-28. Verified 2026-08-28.
 - [video2ppt](https://github.com/Wangxs404/video2ppt) - Python tool that turns
   local videos, online videos, and screen recordings into slides. MIT; last
   repository push 2025-11-03. Verified 2026-07-24.
