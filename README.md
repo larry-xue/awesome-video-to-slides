@@ -50,15 +50,14 @@ content and you want to recover those visuals.
 
 | Tool | Input | Output | Processing | Editability evidence | Verified |
 | --- | --- | --- | --- | --- | --- |
-| [CopySlides](https://copyslides.com/video-to-slides) | Common local video formats | PPTX or Google Slides | Online workflow; paid desktop conversion is also advertised | Vendor says text boxes and layouts are reconstructed as editable objects | 2026-07-15 |
-| [MagicSlides — Direct mode](https://www.magicslides.app/tools/video-to-ppt) | Local MP4, MOV, AVI, or WebM | PPTX | Browser for documented supported formats; server for others | Vendor says editable; object structure not stated | 2026-07-15 |
-| [SlideStream AI](https://slidestream.ai/) | Video upload | Downloadable deck; Google Drive/share link | Not stated | Searchable OCR text is documented; deck structure not stated | 2026-07-15 |
-| [StreamSlide](https://streamslide.io/video-to-slides) | Local MP4, AVI, MOV, MKV, or WebM | PDF | Browser, according to product page | Image slides | 2026-07-15 |
-| [SyncSlide](https://syncslide.com/) | Local MP4, AVI, MOV, MKV, WebM, or FLV; screen recording | PPTX, PDF, Google Slides, or narrated MP4 | Server workflow is documented | Image-faithful visuals with editable speaker notes; native-object reconstruction is not stated | 2026-07-15 |
-| [Video to Slides — Chrome extension](https://chromewebstore.google.com/detail/video-to-slides/nldgdhfmnpbmdpaobpgaplhdgojdgllh) | Video playing in a browser tab | PDF, images, or HTML gallery | Browser extension; store listing says no data collection | Image slides | 2026-07-15 |
-| [Video to Slides](https://videotoslides.org/) | Local MP4, MOV, WebM, or MKV | PPTX, PDF, or images | Server; product says uploads are removed after processing | Vendor describes OCR-rebuilt editable layouts | 2026-07-15 |
-| [Video2Any](https://video2any.com/) **Maintainer project** | Local video, supported video link, or screen recording | PPTX, PDF, images, subtitles | Browser for local video processing; link resolving may use server services | Image-based PPTX; optional local-OCR text layer | 2026-07-15 |
-| [Video2PPT](https://video2ppt.com/) | Local video, online video link, or screen recording | PPTX, PDF, HTML, transcript | Product claims local/no-upload paths; privacy policy also covers server uploads retained up to 24 hours, so behavior is mode-dependent | Vendor says text, shapes, and layouts are editable | 2026-07-15 |
+| [CopySlides](https://copyslides.com/video-to-slides) | Local MP4, MOV, AVI, MKV, or WebM | PPTX or Google Slides | Online workflow; paid desktop conversion is also advertised | Vendor says text boxes and layouts are reconstructed as editable objects | 2026-08-28 |
+| [MagicSlides — Direct mode](https://www.magicslides.app/tools/video-to-ppt) | Local MP4, MOV, AVI, or WebM | PPTX | Browser for MP4, MOV, and WebM; other formats, including AVI, are processed on the vendor's server and deleted after conversion | Vendor says editable; object structure not stated | 2026-08-28 |
+| [SlideStream AI](https://slidestream.ai/) | Not stated | Downloadable deck; Google Drive/share link | Not stated | Searchable OCR text is documented; deck structure not stated | 2026-08-28 |
+| [SyncSlide](https://syncslide.com/) | Local MP4, AVI, MOV, MKV, WebM, or FLV; screen recording | PPTX, PDF, Google Slides, or narrated MP4 | Server workflow is documented | Image-faithful visuals with editable speaker notes; native-object reconstruction is not stated | 2026-08-28 |
+| [Video to Slides — Chrome extension](https://chromewebstore.google.com/detail/video-to-slides/nldgdhfmnpbmdpaobpgaplhdgojdgllh) | Video playing in a browser tab | PDF, images, or HTML gallery | Browser extension; store listing says no data collection | Image slides | 2026-08-28 |
+| [Video to Slides](https://videotoslides.org/) | Local MP4, MOV, WebM, or MKV; YouTube URL | PPTX, PDF, or images | Server; product says uploads are removed after processing | Vendor describes OCR-rebuilt editable layouts | 2026-08-28 |
+| [Video2Any](https://video2any.com/) **Maintainer project** | Local video, supported video link, or screen recording | PPTX, PDF, Word, Markdown, images, subtitles, or audio | Browser for local video processing; link resolving may use server services | Image-based PPTX; optional local-OCR text layer | 2026-08-28 |
+| [Video2PPT](https://video2ppt.com/) | Local video, online video link, or screen recording | PPTX, Google Slides, PDF, HTML, transcript | Product claims local/no-upload paths; privacy policy carves out optional online features whose content leaves the device, retained only as long as needed, so behavior is mode-dependent | Vendor says text, shapes, and layouts are editable | 2026-08-28 |
 
 ## AI deck generation
 
@@ -67,10 +66,10 @@ video. Output may omit, rewrite, or reorganize the original visual content.
 
 | Tool | Input | Output | Processing | Editability evidence | Verified |
 | --- | --- | --- | --- | --- | --- |
-| [MagicSlides — AI mode](https://www.magicslides.app/tools/video-to-ppt) | Video upload; separate converter for online video | PPTX | Mixed; depends on input and mode | AI-generated deck; vendor says editable PPTX | 2026-07-15 |
-| [Presentations.AI](https://www.presentations.ai/url-to-ppt) | Public URL, including YouTube | PPTX | Not stated on the converter page | AI-generated deck; vendor says native editable PPTX | 2026-07-15 |
-| [SlideSpeak](https://slidespeak.co/free-tools/convert-youtube-to-powerpoint) | Public YouTube URL | PPTX or PPT | Server; tool page says immediate removal, while general privacy policy gives uploads a 180-day default | Transcript-derived AI deck; vendor says editable | 2026-07-15 |
-| [SlidesPilot](https://www.slidespilot.com/youtube-to-ppt) | Public YouTube URL | PPTX, Google Slides, PDF, or PNG | Server-side AI analysis; product says it does not store source video/audio | AI-generated deck with block editor; vendor says editable PPTX | 2026-07-15 |
+| [MagicSlides — AI mode](https://www.magicslides.app/tools/video-to-ppt) | Video upload; separate converter for online video | PPTX | Mixed; depends on input and mode | AI-generated deck; vendor says editable PPTX | 2026-08-28 |
+| [Presentations.AI](https://www.presentations.ai/url-to-ppt) | Public URL, including YouTube | PPTX, PDF, PNG/JPG, or share link | Not stated on the converter page | AI-generated deck; vendor says native editable PPTX | 2026-08-28 |
+| [SlideSpeak](https://slidespeak.co/free-tools/convert-youtube-to-powerpoint) | Public YouTube URL | PPTX, PPT, or Google Slides | Server; tool page says immediate removal, while general privacy policy gives uploads a 180-day default | Transcript-derived AI deck; vendor says editable | 2026-08-28 |
+| [SlidesPilot](https://www.slidespilot.com/youtube-to-ppt) | Public YouTube URL | PPTX, Google Slides, PDF, or PNG | Server-side AI analysis; retention not stated | AI-generated deck with block editor; vendor says editable PPTX | 2026-08-28 |
 
 ## Open-source slide extraction
 
