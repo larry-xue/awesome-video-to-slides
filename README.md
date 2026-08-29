@@ -1,7 +1,7 @@
 # Awesome Video to Slides [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-A curated, evidence-linked list of tools and libraries for recovering slides
-from recorded presentations or generating a new deck from video content.
+Recovering the slides shown in a recorded talk, and generating a new deck from
+video content.
 
 These are different jobs:
 
@@ -83,15 +83,10 @@ video. Output may omit, rewrite, or reorganize the original visual content.
 Projects whose documented purpose directly includes extracting presentation
 slides from video:
 
-- [lectures-2-slides](https://github.com/sidharth-anand/lectures-2-slides) - Python CLI that batch-converts a directory of lecture videos into per-lecture
-  PDF slide decks. MIT; last repository push 2021-10-17. Verified 2026-07-24.
-- [slideextract](https://github.com/szanni/slideextract) - C/C++ command-line
-  program that compares frames in a selected region and writes one image per
-  detected slide. BSD-2-Clause; last repository push 2023-05-06. Verified
-  2026-07-15.
-- [vid2slides](https://github.com/patrickmineault/vid2slides) - Python tool that
-  extracts slides from a talk video. No license declared, so reuse terms are
-  unclear; last repository push 2020-11-23. Verified 2026-07-24.
+Projects that have stopped receiving commits are listed separately in
+[docs/unmaintained.md](https://github.com/larry-xue/awesome-video-to-slides/blob/main/docs/unmaintained.md).
+
+
 - [video-slide-extractor](https://github.com/larry-xue/video-slide-extractor) - **Maintainer project.** Dependency-free JavaScript detector for browser or
   Node pipelines, and a CLI (`npx video-slide-extractor talk.mp4`) that writes
   one image per detected slide, shelling out to FFmpeg to decode and to
